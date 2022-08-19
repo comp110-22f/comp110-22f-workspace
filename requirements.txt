@@ -25,7 +25,7 @@ rope
 # Templating - Helpful when generating files and strings with values to fill in.
 jinja2
 
-# Color ASCII Output in Terminals
+# Color ASCII Output ins
 colorama
 
 # Scientific Computing
