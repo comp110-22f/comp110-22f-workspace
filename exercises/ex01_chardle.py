@@ -1,4 +1,4 @@
-""""EX01 - Chardle - A cute step toward Wordle."""
+"""EX01 - Chardle - A cute step toward Wordle."""
 __author__ = "730483450"
 
 word: str = input("Enter a 5-character word:") 
@@ -24,8 +24,8 @@ if word[1] == letter:
 count = count + 1 
 
 if word[2] == letter:
-     print(letter + "found at index 2")
-count = count+ 1 
+    print(letter + "found at index 2")
+count = count + 1 
 
 if word[3] == letter:
     print(letter + "found at index 3")
