@@ -16,19 +16,19 @@ if len(single_character) != 1:
 print("Searching for " + single_character + " in " + initial_prompt)
 
 if single_character == (initial_prompt)[1]:
-    print( single_character + " found at index 1")
+    print(single_character + " found at index 1")
 
 if single_character == (initial_prompt)[0]:
-    print( single_character + " found at index 0 ")
+    print(single_character + " found at index 0 ")
 
 if single_character == (initial_prompt)[2]:
-    print( single_character + " found at index 2") 
+    print(single_character + " found at index 2") 
 
 if single_character == (initial_prompt)[3]:
-    print( single_character + " found at index 3")
+    print(single_character + " found at index 3")
 
 if single_character == (initial_prompt)[4]:
-    print( single_character + " found at index 4")
+    print(single_character + " found at index 4")
 
 count: int = 0
 
@@ -48,51 +48,10 @@ if initial_prompt[4] == single_character:
     count = count + 1
 
 if count == 1:
-    print( str(count) + " instance of " + single_character + " in " + initial_prompt)
+    print(str(count) + " instance of " + single_character + " found in " + initial_prompt)
 
 if count > 1:
-    print( str(count) + " instances of " + single_character + " in " + initial_prompt)
+    print(str(count) + " instances of " + single_character + " found in " + initial_prompt)
 
 if count == 0:
-    print("No instances of " + single_character + " in " + initial_prompt)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print("No instances of " + single_character + " found in " + initial_prompt)
