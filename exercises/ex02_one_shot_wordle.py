@@ -11,7 +11,7 @@ guess: str = str(input("What is your 6-letter guess? "))
 
 # This tests to see if the length of the user's guess is the length of the secret word.
 while len(guess) != len(secret_word):   
-    guess = input (f"That was not {len(secret_word)} letters! Try again: ")
+    guess = input(f"That was not {len(secret_word)} letters! Try again: ")
 
 indexer: int = 0
 result: str = ""
