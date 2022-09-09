@@ -1,4 +1,4 @@
-"""One Shot Wordle"""
+"""One Shot Wordle."""
 __author__ = "730311638"
 
 SECRET: str = "python"
@@ -10,7 +10,7 @@ YELLOW_BOX: str = "\U0001F7E8"
 while len(GUESS) != len(SECRET):
     GUESS = input(f"That was not {len(SECRET)} letters! Try again: ")
 if GUESS == SECRET:
-        print("Woo! You got it!")
+    print("Woo! You got it!")
 else:
     print("Not quite. Play again!")
 
@@ -27,7 +27,7 @@ while i < len(SECRET):
             if SECRET[alternate_i] == GUESS[i]: 
                 guessed_character = True
             alternate_i = alternate_i + 1
-        if guessed_character == True:
+        if guessed_character is True:
             EMOJI = EMOJI + YELLOW_BOX
         else: 
             EMOJI = EMOJI + WHITE_BOX
