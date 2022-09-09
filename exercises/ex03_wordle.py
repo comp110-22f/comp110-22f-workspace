@@ -3,4 +3,5 @@
 __author__: str = "730557115"
 
 def contains_char(True: str, False: str) -> str:
+    wordle : str
     
