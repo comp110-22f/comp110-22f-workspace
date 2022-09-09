@@ -18,19 +18,19 @@ else:
 
 if character == word [0]:
     print(character + " found at index 0")
-    counter + 1
+    counter = counter + 1
 if character == word [1]:
     print(character + " found at index 1")
-    counter + 1
+    counter = counter + 1
 if character == word [2]:
     print(character + " found at index 2")
-    counter + 1
+    counter = counter + 1
 if character == word [3]:
     print(character + " found at index 3")
-    counter + 1
+    counter = counter + 1
 if character == word [4]:
     print(character + " found at index 4")
-    counter + 1
+    counter = counter + 1
 
 print( counter + " instances of " + character + " found in " + word)
 
