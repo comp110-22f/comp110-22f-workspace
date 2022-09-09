@@ -64,6 +64,6 @@ def main() -> None:  # main results in None so no return is necessary
     else:
         print("X/6 - Sorry, try again tomorrow!")
 
+
 if __name__ == "__main__":
     main()
-
