@@ -4,7 +4,7 @@ __author__ = "730470086"
 
 secret: str = "heels"
 compare: str = "e"
-counter: int = 0
+counter = 0
 
 word: str = input("Enter a 5-character word: ")
 if len(word) != len(secret):
