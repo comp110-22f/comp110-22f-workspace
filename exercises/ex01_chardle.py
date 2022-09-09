@@ -3,12 +3,17 @@
 __author__ = "730470086"
 
 secret: str = "heels"
+seecret: str = "e"
+
 word: str = input("Enter a 5-character word: ")
 if len(word) != len(secret):
     exit( print("Error: Word must contain 5 characters")) 
 
 character: str = input("Enter a single character: ")
-print("Searching for " + character + " in " + word)
+if len(character) != len(seecret):
+    exit( print("Error: Character must be a single character."))
+else:
+    print("Searching for " + character + " in " + word)
 
 if character == word [0]:
     print(character + " found at index 0")
