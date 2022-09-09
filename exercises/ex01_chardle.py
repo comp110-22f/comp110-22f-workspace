@@ -31,7 +31,8 @@ if character == word [3]:
 if character == word [4]:
     print(character + " found at index 4")
     counter = counter + 1
-    print( counter + " instances of " + character + " found in " + word)
+    
+print( str(counter) + " instances of " + character + " found in " + word)
 
 
 
