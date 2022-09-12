@@ -5,6 +5,8 @@ __author__ = "730470086"
 
 secret: str = "python"
 word: str = input("What is your 6-letter guess? ")
+counter: int = 0
+emoji: str = ""
 white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
@@ -20,6 +22,9 @@ while len(secret) == len(word):
     else:
         print("Not quite. Play again soon!")
         quit()
+
+while index < len(secret):
+    print("hi") 
 
 
 
