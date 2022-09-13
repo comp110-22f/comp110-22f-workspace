@@ -15,19 +15,24 @@ yellow_box: str = "\U0001F7E8"
 while len(secret) != len(word):
     word: str = input(f"That was not {len(secret)} letters! Try again: ")
 
-while len(secret) == len(word):
+if len(secret) == len(word):
     if secret == word:
+        while counter < len(secret):
+            if word[counter] == secret[counter]:
+                emoji += green_box
+            counter = counter + 1
         print("Woo! You got it!")
         quit()
+    else:
         while counter < len(secret):
             if word[counter] == secret[counter]:
                 emoji += green_box
             else: 
                 emoji += white_box
-    else:
+            counter = counter + 1
+        print(emoji)
         print("Not quite. Play again soon!")
         quit()
-
 
 
 
