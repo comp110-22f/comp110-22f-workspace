@@ -21,6 +21,7 @@ if len(secret) == len(word):
             if word[counter] == secret[counter]:
                 emoji += green_box
             counter = counter + 1
+        print(emoji)
         print("Woo! You got it!")
         quit()
     else:
