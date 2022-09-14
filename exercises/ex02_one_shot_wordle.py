@@ -29,8 +29,8 @@ if len(secret) == len(word):
         quit()
     else:
         while existence is False and counter < len(secret):
-            if track_alt == counter:
-                existence: bool = True
+            if word[counter] == secret[counter]:
+                existence = True
             else:
                 track_alt += 1
         if existence is True:
