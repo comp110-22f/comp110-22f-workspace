@@ -6,15 +6,13 @@ secret: str = "python"
 word: str = input(f"What is your {len(secret)}-letter guess? ")
 counter: int = 0
 emoji: str = ""
-track_alt: int = 0
-existence: bool = False
 
 white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
 
 while len(secret) != len(word):
-    word: str = input(f"That was not {len(secret)} letters! Try again: ")
+    word = str = input(f"That was not {len(secret)} letters! Try again: ")
 
 if len(secret) == len(word):
     if secret == word:
