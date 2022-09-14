@@ -31,9 +31,11 @@ if len(secret) == len(word):
         while counter < len(secret):
             if word[counter] == secret[counter]:
                 emoji += green_box
-            else: 
-                while existence is False and counter < len(secret):
-                    if word[counter] == secret[counter]:
+            else:
+                track_alt: int = 0
+                existence: bool = False
+                while ((existence is False) & (track_alt < len(secret))):
+                    if word[counter] == secret[track_alt]:
                         existence = True
                     else:
                         track_alt += 1
