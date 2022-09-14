@@ -28,15 +28,21 @@ if len(secret) == len(word):
         print("Woo! You got it!")
         quit()
     else:
-        while existence is False and counter < len(secret):
+        while counter < len(secret):
             if word[counter] == secret[counter]:
-                existence = True
-            else:
-                track_alt += 1
-        if existence is True:
-            emoji += yellow_box
-        else: 
-            emoji += white_box
+                emoji += green_box
+            else: 
+                while existence is False and counter < len(secret):
+                    if word[counter] == secret[counter]:
+                        existence = True
+                    else:
+                        track_alt += 1
+                if existence is True:
+                    emoji += yellow_box
+                else: 
+                    emoji += white_box
+            counter += 1
+            track_alt = 0
         print(emoji)
         print("Not quite. Play again soon!")
         quit()
@@ -57,8 +63,8 @@ if secret != word:
 
 
 while counter < len(secret):
-            if word[counter] == secret[counter]:
-                emoji += green_box
-            else: 
-                emoji += white_box
-            counter = counter + 1
+    if word[counter] == secret[counter]:
+        emoji += green_box
+    else: 
+        emoji += white_box
+    counter = counter + 1
