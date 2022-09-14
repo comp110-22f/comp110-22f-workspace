@@ -12,7 +12,7 @@ green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
 
 while len(secret) != len(word):
-    word = str = input(f"That was not {len(secret)} letters! Try again: ")
+    word = input(f"That was not {len(secret)} letters! Try again: ")
 
 if len(secret) == len(word):
     if secret == word:
