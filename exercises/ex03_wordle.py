@@ -70,16 +70,17 @@ def main () -> None:
     """The entrypoint of the program and the main game loop."""
     secret: str = "codes"
     number: int = 5
-    guess: str = input(f"Enter a {number} character word: ")
     tries = 1
+    turn: str = (f"=== Turn {tries}/6 ===")
+    guess: str = input(f"Enter a {number} character word: ")
     white_box: str = "\U00002B1C"
     green_box: str = "\U0001F7E9"
     yellow_box: str = "\U0001F7E8"
     emoji: str = ""
     counter: int = 0
-    while len(word) != number:
-        word: str = input(f"That wasn't {number} chars! Try again: ")
-    if len(word) == number:
+    while len(guess) != number:
+        guess: str = input(f"That wasn't {number} chars! Try again: ")
+    if len(guess) == number:
         while tries < 6:
             if guess == secret:
                 while counter < len(secret):
