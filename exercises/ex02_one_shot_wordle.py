@@ -22,7 +22,7 @@ if len(secret) == len(word):
             counter = counter + 1
         print(emoji)
         print("Woo! You got it!")
-        exit()
+
     else:
         while counter < len(secret):
             if word[counter] == secret[counter]:
@@ -43,4 +43,3 @@ if len(secret) == len(word):
             track_alt = 0
         print(emoji)
         print("Not quite. Play again soon!")
-        exit()
