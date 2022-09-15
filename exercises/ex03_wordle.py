@@ -1,17 +1,17 @@
 """Wordle."""
 __author__ = "730311638"
 
+
 def contains_char(guess: str, character: str) -> bool:
-    """Given string of any length, single character will be searched for in that string"""
+    """Given string of any length, single character will be searched for in that string."""
     i: int = 0
     assert len(character) == 1
     while i < len(guess):
         if character == guess[i]:
-            return True #If True, the character is present in the word
+            return True 
         i += 1
-    return False #if False, the character is NOT present in the word
+    return False 
 
-#We want to call contains_char for each index
 
 def emojified(guess: str, secret: str) -> str:
     """Given 2 strings of equal length, returns a string of emojis coding whether correct letter was used."""
@@ -24,12 +24,13 @@ def emojified(guess: str, secret: str) -> str:
     while i < len(secret): 
         if guess[i] == secret[i]:
             EMOJI = EMOJI + GREEN_BOX
-        elif contains_char(secret, guess[i]) == True:
-                EMOJI = EMOJI + YELLOW_BOX
+        if contains_char(secret, guess[i]) == True:
+            EMOJI = EMOJI + YELLOW_BOX
         else: 
             EMOJI = EMOJI + WHITE_BOX
         i += 1
     return EMOJI
+
 
 def input_guess(expected_length: int) -> str:
     """Given an integer, prompts the user for a guess and continues until they provide guess of expected length."""
@@ -39,28 +40,24 @@ def input_guess(expected_length: int) -> str:
     if len(GUESS) == expected_length:
         return GUESS
 
+
 def main() -> None:
     """The entrypoint of the program and main game loop."""
-    secret: str = "codes" #secret word 
-    N: int = 1 #number of turns left
+    secret: str = "codes"
+    N: int = 1
     GUESS: str = ""
     while N <= 6 and GUESS != secret:
         print("=== Turn " + str(N) + "/6 ===")
-        GUESS = input_guess(5) #the input of the function when prompted
+        GUESS = input_guess(5)
         emoji: str = emojified(GUESS, secret)
         print(emoji)
         if GUESS == secret:
             number: str = str(N)
             print("You won in " + number + "/6 turns!")
         N = N + 1
+    quit()
+
+
 
 if __name__ == "__main__":
-    main()
-            
-
-
-    
-
-
-
-    
+    main()  
