@@ -4,18 +4,20 @@ __author__ = "730470086"
 
 counter: int = 0
 
-def contains_char (word: str = input("Enter a word ") , character: str = input("Enter a single charaacter ")) -> bool:
+def contains_char (word: str , character: str) -> bool:
     """Returns True if character is in word."""
     assert len(character) == 1
     while counter < len(word):
         track: int = 0
-        existence; bool = False
+        existence: bool = False
         while ((existence is False) & (track < len(word))):
-            if word[counter] == character[counter]:
-                existence = True 
+            if word[counter] == character:
+                existence = True
             else:
                 track += 1
-    if existence is True:
-        return True
-    else:
-        return False
+        if existence is True:
+            return True
+        else:
+            return False
+    counter += 1
+    track = 0
