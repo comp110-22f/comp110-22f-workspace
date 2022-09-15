@@ -107,9 +107,9 @@ def main () -> None:
                         emoji += yellow_box
                     else:
                         emoji += white_box
-                    counter += 1
-                    track = 0
-                    attempts = attempts + 1
+                attempts += 1
+                counter += 1
+                track = 0
             print(f"{emoji}")
             guess: str = input(f"Enter a {number} character word: ")
 
