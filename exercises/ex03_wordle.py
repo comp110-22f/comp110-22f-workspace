@@ -61,7 +61,7 @@ def emojified (guess: str , secret: str) -> bool:
 def input_guess (number: int) -> str:
     """Prompts user for guess."""
     word: str = input(f"Enter a {number} character word: ")
-    if len(word) != number - 1:
+    while len(word) != number:
         word: str = input(f"That wasn't {number} chars! Try again: ")
-    else:
+    if len(word) == number:
         return word
