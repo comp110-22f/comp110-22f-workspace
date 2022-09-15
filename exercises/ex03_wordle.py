@@ -58,8 +58,10 @@ def emojified (guess: str , secret: str) -> bool:
             track = 0
         return emoji
 
-def input_guess (a: int) -> str:
+def input_guess (number: int) -> int:
     """Prompts user for guess."""
-    input: word = str ("Enter a five character word: ")
-    if len(word) != len(4):
-        input: word = str ("That wasn't 5 chars! Try again: ")
+    word: str = input("Enter a " + number + " character word: ")
+    if len(word) != number - 1:
+        word: str = input("That wasn't " + number + " chars! Try again: ")
+    else:
+        return word
