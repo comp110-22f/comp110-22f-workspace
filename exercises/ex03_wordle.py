@@ -3,7 +3,7 @@
 __author__ = "730470086"
 
 def contains_char (word: str , character: str) -> bool:
-    """Returns True if character is in word."""
+    """Determines if character is in word."""
     assert len(character) == 1
     counter: int = 0
     while counter < len(word):
@@ -25,8 +25,41 @@ def contains_char (word: str , character: str) -> bool:
             return False
 
 def emojified (guess: str , secret: str) -> bool:
-    """d"""
+    """Provides emoji output."""
+    assert len(guess) == len(secret)
+    white_box: str = "\U00002B1C"
+    green_box: str = "\U0001F7E9"
+    yellow_box: str = "\U0001F7E8"
+    emoji: str = ""
+    counter: int = 0
+    if guess == secret:
+        while counter < len(secret):
+            if guess[counter] == secret[counter]:
+                emoji += green_box
+            counter = counter + 1
+            return emoji
+    else:
+        while counter < len(secret):
+            if guess[counter] == secret[counter]:
+                emoji += green_box
+            else:
+                track: int = 0
+                existence: bool = False
+                while ((existence is False) & (track < len(secret))):
+                    if guess[counter] == secret[track]:
+                        existence = True
+                    else:
+                        track += 1
+                if existence is True:
+                    emoji += yellow_box
+                else:
+                    emoji += white_box
+            counter += 1
+            track = 0
+        return emoji
 
-white_box: str = "\U00002B1C"
-green_box: str = "\U0001F7E9"
-yellow_box: str = "\U0001F7E8"
+def input_guess (a: int) -> str:
+    """Prompts user for guess."""
+    input: word = str ("Enter a five character word: ")
+    if len(word) != len(4):
+        input: word = str ("That wasn't 5 chars! Try again: ")
