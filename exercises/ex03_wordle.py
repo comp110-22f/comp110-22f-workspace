@@ -2,8 +2,6 @@
 
 __author__ = "730470086"
 
-counter: int = 0
-
 def contains_char (word: str , character: str) -> bool:
     """Returns True if character is in word."""
     assert len(character) == 1
