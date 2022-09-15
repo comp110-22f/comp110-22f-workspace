@@ -7,6 +7,7 @@ counter: int = 0
 def contains_char (word: str , character: str) -> bool:
     """Returns True if character is in word."""
     assert len(character) == 1
+    counter: int = 0
     while counter < len(word):
         if word[counter] == character:
             return True
@@ -18,9 +19,9 @@ def contains_char (word: str , character: str) -> bool:
                     existence = True
                 else:
                     track += 1
-            if existence is True:
-                return True
-            else:
-                return False
-        counter += 1
-        track_alt = 0
+            counter += 1
+            track = 0
+        if existence is True:
+            return True
+        else:
+            return False
