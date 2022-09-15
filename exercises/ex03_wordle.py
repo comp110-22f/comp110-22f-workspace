@@ -82,6 +82,7 @@ def main () -> None:
         guess: str = input(f"That wasn't {number} chars! Try again: ")
     if len(guess) == number:
         while tries < 6:
+            return turn
             if guess == secret:
                 while counter < len(secret):
                     if guess[counter] == secret[counter]:
@@ -107,4 +108,6 @@ def main () -> None:
                             emoji += white_box
                     counter += 1
                     track = 0
+                    tries = tries + 1
                 return emoji
+                return str(f"You won in {tries}/6 turns!")
