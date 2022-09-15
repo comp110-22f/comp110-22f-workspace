@@ -6,6 +6,7 @@ counter: int = 0
 
 def contains_char (word: str = input("Enter a word ") , character: str = input("Enter a single charaacter ")) -> bool:
     """Returns True if character is in word."""
+    assert len(character) == 1
     while counter < len(word):
         track: int = 0
         existence; bool = False
