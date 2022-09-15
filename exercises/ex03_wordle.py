@@ -110,4 +110,3 @@ def main () -> None:
                     track = 0
                     tries = tries + 1
                 print(f"{emoji}")
-                print(f"You won in {tries}/6 turns!")
