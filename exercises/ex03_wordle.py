@@ -17,9 +17,16 @@ def contains_char (word: str , character: str) -> bool:
                     existence = True
                 else:
                     track += 1
-            counter += 1
+                    counter += 1
             track = 0
         if existence is True:
             return True
         else:
             return False
+
+def emojified (guess: str , secret: str) -> bool:
+    """d"""
+
+white_box: str = "\U00002B1C"
+green_box: str = "\U0001F7E9"
+yellow_box: str = "\U0001F7E8"
