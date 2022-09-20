@@ -10,12 +10,10 @@ def all(a: list[int], b: int) -> bool:
     if len(a) == counter:
         return False
     while counter < len(a):
-        while a[counter] == b:
-            if a[counter] == b:
-                counter += 1
-            else: 
-                return False
-        return True
+        if a[counter] != b:
+            return False
+        counter += 1
+    return True
 
 
 def max(input: list[int]) -> int:
