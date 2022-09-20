@@ -2,7 +2,7 @@
 
 __author__ = "730470086"
 
-def contains_char (word: str , character: str) -> bool:
+def contains_char(word: str , character: str) -> bool:
     """Determines if character is in word."""
     assert len(character) == 1
     counter: int = 0
@@ -24,7 +24,8 @@ def contains_char (word: str , character: str) -> bool:
         else:
             return False
 
-def emojified (guess: str , secret: str) -> bool:
+
+def emojified(guess: str , secret: str) -> bool:
     """Provides emoji output."""
     assert len(guess) == len(secret)
     white_box: str = "\U00002B1C"
@@ -58,7 +59,8 @@ def emojified (guess: str , secret: str) -> bool:
             track = 0
         return emoji
 
-def input_guess (number: int) -> str:
+
+def input_guess(number: int) -> str:
     """Prompts user for guess."""
     word: str = input(f"Enter a {number} character word: ")
     while len(word) != number:
@@ -66,7 +68,8 @@ def input_guess (number: int) -> str:
     if len(word) == number:
         return word
 
-def main () -> None:
+
+def main() -> None:
     """The entrypoint of the program and the main game loop."""
     secret: str = "codes"
     number: int = 5
@@ -80,36 +83,33 @@ def main () -> None:
     counter: int = 0
     while len(guess) != number:
         guess: str = input(f"That wasn't {number} chars! Try again: ")
-    if len(guess) == number:
-        if guess == secret:
-            while counter < len(secret):
-                if guess[counter] == secret[counter]:
-                    emoji += green_box
-                counter = counter + 1
-            print(f"{emoji}")
-            print(f"You won in {tries}/6 turns!")
-        else:
-            attempts: int = 1
-            turns: str = (f"=== Turn {attempts}/6 ===")
-            while counter < len(secret):
-                print(f"{turns}")
-                if guess[counter] == secret[counter]:
-                    emoji += green_box
-                else:
-                    track: int = 0
-                    existence: bool = False
-                    while ((existence is False) & (track < len(secret))):
-                        if guess[counter] == secret[track]:
-                            existence = True
-                        else:
-                            track += 1
-                    if existence is True:
-                        emoji += yellow_box
+    while len(guess) == number:
+            print(f"{turn}")
+            if guess == secret:
+                while counter < len(secret):
+                    if guess[counter] == secret[counter]:
+                        emoji += green_box
+                    counter = counter + 1
+                print(f"{emoji}")
+                print(f"You won in {tries}/6 turns!")
+            else:
+                while counter < len(secret):
+                    if guess[counter] == secret[counter]:
+                        emoji += green_box
                     else:
-                        emoji += white_box
-                attempts += 1
-                counter += 1
-                track = 0
-            print(f"{emoji}")
-            guess: str = input(f"Enter a {number} character word: ")
-
+                        track: int = 0
+                        existence: bool = False
+                        while ((existence is False) & (track < len(secret))):
+                            if guess[counter] == secret[track]:
+                                existence = True
+                            else:
+                                track += 1
+                        if existence is True:
+                            emoji += yellow_box
+                        else:
+                            emoji += white_box
+                    tries += 1
+                    counter += 1
+                    track = 0
+                    guess: str = input(f"Enter a {number} character word: ")
+                print(f"{emoji}")
