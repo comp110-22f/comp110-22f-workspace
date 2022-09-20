@@ -2,10 +2,13 @@
 
 __author__ = "730470086"
 
+
 def all(a: list[str], b: int) -> bool:
     """Determines if number is in list."""
     # Check if b is in list a
     counter: int = 0
+    if len(a)== counter:
+        return False
     while counter < len(a):
         if a[counter] == b:
             return True
