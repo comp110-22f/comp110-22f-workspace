@@ -3,7 +3,7 @@
 __author__ = "730470086"
 
 
-def all(a: list[str], b: int) -> bool:
+def all(a: list[int], b: int) -> bool:
     """Determines if all numbers in list are the integer."""
     # Check if b is in list a
     counter: int = 0
@@ -11,11 +11,11 @@ def all(a: list[str], b: int) -> bool:
         return False
     while counter < len(a):
         while a[counter] == b:
-            counter += 1
-            if a[counter] != b:
-                return False
+            if a[counter] == b:
+                counter += 1
             else: 
-                return True
+                return False
+        return True
 
 
 def max(input: list[int]) -> int:
