@@ -4,28 +4,18 @@ __author__ = "730470086"
 
 
 def all(a: list[str], b: int) -> bool:
-    """Determines if number is in list."""
+    """Determines if all numbers in list are the integer."""
     # Check if b is in list a
     counter: int = 0
-    if len(a)== counter:
+    if len(a) == counter:
         return False
     while counter < len(a):
-        if a[counter] == b:
-            return True
-        else:
-            track: int = 0
-            existence: bool = False
-            while((existence is False) & (track < len(a))):
-                if a[counter] == b:
-                    existence = True
-                else:
-                    track += 1
-                    counter += 1
-            track = 0
-        if existence is True:
-            return True
-        else:
-            return False
+        while a[counter] == b:
+            counter += 1
+            if a[counter] != b:
+                return False
+            else: 
+                return True
 
 
 def max(input: list[int]) -> int:
