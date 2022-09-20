@@ -111,5 +111,5 @@ def main() -> None:
                 tries += 1
                 counter += 1
                 track = 0
-                guess: str = input(f"Enter a {number} character word: ")
             print(f"{emoji}")
+            guess: str = input(f"Enter a {number} character word: ")
