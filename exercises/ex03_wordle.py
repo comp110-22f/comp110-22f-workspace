@@ -83,33 +83,33 @@ def main() -> None:
     counter: int = 0
     while len(guess) != number:
         guess: str = input(f"That wasn't {number} chars! Try again: ")
-    while len(guess) == number:
-            print(f"{turn}")
-            if guess == secret:
-                while counter < len(secret):
-                    if guess[counter] == secret[counter]:
-                        emoji += green_box
-                    counter = counter + 1
-                print(f"{emoji}")
-                print(f"You won in {tries}/6 turns!")
-            else:
-                while counter < len(secret):
-                    if guess[counter] == secret[counter]:
-                        emoji += green_box
-                    else:
-                        track: int = 0
-                        existence: bool = False
-                        while ((existence is False) & (track < len(secret))):
-                            if guess[counter] == secret[track]:
-                                existence = True
-                            else:
-                                track += 1
-                        if existence is True:
-                            emoji += yellow_box
+    if len(guess) == number:
+        print(f"{turn}")
+        if guess == secret:
+            while counter < len(secret):
+                if guess[counter] == secret[counter]:
+                    emoji += green_box
+                counter = counter + 1
+            print(f"{emoji}")
+            print(f"You won in {tries}/6 turns!")
+        else:
+            while counter < len(secret):
+                if guess[counter] == secret[counter]:
+                    emoji += green_box
+                else:
+                    track: int = 0
+                    existence: bool = False
+                    while ((existence is False) & (track < len(secret))):
+                        if guess[counter] == secret[track]:
+                            existence = True
                         else:
-                            emoji += white_box
-                    tries += 1
-                    counter += 1
-                    track = 0
-                    guess: str = input(f"Enter a {number} character word: ")
-                print(f"{emoji}")
+                            track += 1
+                    if existence is True:
+                        emoji += yellow_box
+                    else:
+                        emoji += white_box
+                tries += 1
+                counter += 1
+                track = 0
+                guess: str = input(f"Enter a {number} character word: ")
+            print(f"{emoji}")
