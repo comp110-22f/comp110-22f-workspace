@@ -25,7 +25,7 @@ def contains_char(word: str , character: str) -> bool:
             return False
 
 
-def emojified(guess: str , secret: str) -> bool:
+def emojified(guess: str , secret: str) -> str:
     """Provides emoji output."""
     assert len(guess) == len(secret)
     white_box: str = "\U00002B1C"
@@ -39,25 +39,18 @@ def emojified(guess: str , secret: str) -> bool:
                 emoji += green_box
             counter = counter + 1
             return emoji
-    else:
-        while counter < len(secret):
-            if guess[counter] == secret[counter]:
-                emoji += green_box
+    while counter < len(secret):
+        if guess[counter] == secret[counter]:
+            emoji += green_box
+        else:
+            contains_char(secret , guess[counter])
+            if True:
+                emoji += yellow_box
             else:
-                track: int = 0
-                existence: bool = False
-                while ((existence is False) & (track < len(secret))):
-                    if guess[counter] == secret[track]:
-                        existence = True
-                    else:
-                        track += 1
-                if existence is True:
-                    emoji += yellow_box
-                else:
-                    emoji += white_box
-            counter += 1
-            track = 0
-        return emoji
+                emoji += white_box
+        counter += 1
+    return emoji
+        
 
 
 def input_guess(number: int) -> str:
