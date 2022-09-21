@@ -2,7 +2,8 @@
 
 __author__ = "730470086"
 
-def contains_char(word: str , character: str) -> bool:
+
+def contains_char(word: str, character: str) -> bool:
     """Determines if character is in word."""
     assert len(character) == 1
     counter: int = 0
@@ -25,7 +26,7 @@ def contains_char(word: str , character: str) -> bool:
             return False
 
 
-def emojified(guess: str , secret: str) -> str:
+def emojified(guess: str, secret: str) -> str:
     """Provides emoji output."""
     assert len(guess) == len(secret)
     white_box: str = "\U00002B1C"
@@ -38,20 +39,19 @@ def emojified(guess: str , secret: str) -> str:
             if guess[counter] == secret[counter]:
                 emoji += green_box
             counter = counter + 1
-            return emoji
+        return emoji
     while counter < len(secret):
         if guess[counter] == secret[counter]:
             emoji += green_box
         else:
-            contains_char(secret , guess[counter])
-            if True:
+            asses = contains_char(secret, guess[counter])
+            if asses is True:
                 emoji += yellow_box
             else:
                 emoji += white_box
         counter += 1
     return emoji
         
-
 
 def input_guess(number: int) -> str:
     """Prompts user for guess."""
