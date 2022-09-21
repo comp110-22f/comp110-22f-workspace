@@ -15,14 +15,6 @@ while len(secret) != len(word):
     word = input(f"That was not {len(secret)} letters! Try again: ")
 
 if len(secret) == len(word):
-    if secret == word:
-        while counter < len(secret):
-            if word[counter] == secret[counter]:
-                emoji += green_box
-            counter = counter + 1
-        print(emoji)
-        print("Woo! You got it!")
-
     else:
         while counter < len(secret):
             if word[counter] == secret[counter]:

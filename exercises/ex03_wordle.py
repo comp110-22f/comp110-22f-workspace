@@ -66,12 +66,28 @@ def main() -> None:
     """The entrypoint of the program and the main game loop."""
     secret: str = "codes"
     counter: int = 1
-    turn: str = (f"=== Turn {counter}/6 ===")
+    green_box: str = "\U0001F7E9"
+    emoji: str = ""
     while counter <= 6:
+        turn: str = (f"=== Turn {counter}/6 ===")
         print(f"{turn}")
         guess = input_guess(5)
-        result = emojified(guess, secret)
-        if guess == secret:
+        if secret == guess:
+            i: int = 0
+            while i < len(secret):
+                if guess[i] == secret[i]:
+                    emoji += green_box
+                i = i + 1
+            print(f"{emoji}")
             print(f"You won in {counter}/6 turns!")
-        else:
-            counter += 1
+            break
+        else:    
+            result = emojified(guess, secret)
+            print(f"{result}")
+        counter = counter + 1
+            
+    if counter >= 6:
+        print("X/6 - Sorry, try again tomorrow!")
+
+        
+    
