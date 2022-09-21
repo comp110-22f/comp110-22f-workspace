@@ -7,9 +7,10 @@ def contains_char(word: str, character: str) -> bool:
     """Determines if character is in word."""
     assert len(character) == 1
     counter: int = 0
+    yay: bool = True
     while counter < len(word):
         if word[counter] == character:
-            return True
+            yay = True
         else:
             track: int = 0
             existence: bool = False
@@ -21,9 +22,10 @@ def contains_char(word: str, character: str) -> bool:
                     counter += 1
             track = 0
         if existence is True:
-            return True
+            yay = True
         else:
-            return False
+            yay = False
+    return yay
 
 
 def emojified(guess: str, secret: str) -> str:
@@ -56,10 +58,12 @@ def emojified(guess: str, secret: str) -> str:
 def input_guess(number: int) -> str:
     """Prompts user for guess."""
     word: str = input(f"Enter a {number} character word: ")
+    wow: str = ""
     while len(word) != number:
-        word: str = input(f"That wasn't {number} chars! Try again: ")
+        guess: str = input(f"That wasn't {number} chars! Try again: ")
     if len(word) == number:
-        return word
+        wow = word
+    return wow
 
 
 def main() -> None:
