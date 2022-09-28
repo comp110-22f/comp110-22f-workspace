@@ -55,9 +55,9 @@ def test_sub_empty() -> None:
 def test_sub_many() -> None:
     """Test sub with many."""
     x: list[int] = [1, 2, 3, 4, 5, 6]
-    start: int = 1
-    end: int = 3
-    assert sub(x, start, end) == [2, 3]
+    start: int = 2
+    end: int = 5
+    assert sub(x, start, end) == [3, 5]
 
 
 def test_sub_many_again() -> None:
@@ -65,4 +65,4 @@ def test_sub_many_again() -> None:
     x: list[int] = [10, 20, 30, 40, 50, 60, 70, 80]
     start: int = 1
     end: int = 10
-    assert sub(x, start, end) == [20]
+    assert sub(x, start, end) == x[start]
