@@ -23,7 +23,7 @@ def concat(x: list[int], y: list[int]) -> list[int]:
     i = 0
     while i < len(y):
         z.append(y[i])
-        i +=1 
+        i += 1 
     return z
 
 
@@ -31,7 +31,7 @@ def sub(x: list[int], start: int, end: int) -> list[int]:
     """Returns a List that is a subset of given list."""
     subset: list[int] = list()
     end -= 1
-    if len(x) == 0 or start > len(x):
+    if len(x) == 0 or start > len(x) or start == len(x) or end > len(x):
         return []
     else: 
         subset.append(x[start])
