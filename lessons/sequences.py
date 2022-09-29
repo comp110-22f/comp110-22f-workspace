@@ -34,3 +34,15 @@ another_range: range = range(0, 10)
 zero_start: range = range(10)
 for x in zero_start:
     print(x)
+
+
+names: list[str] = ["Kris", "Alyssa", "Ben", "Arnold"]
+
+for name in names:
+    print(name)
+
+# Rnge is often used to write for loops where
+# your iteration pattern is not consecutive
+for i in range(0, len(names), 2):
+    print(names[i])
+
