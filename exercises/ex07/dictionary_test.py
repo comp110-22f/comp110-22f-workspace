@@ -18,6 +18,11 @@ def test_invert_edge() -> None:
     assert invert({'circle': 'round'}) == {'round': 'circle'}
 
 
+def test_invert_use_capital() -> None:
+    """Tests if capital letters do not raise keyerror."""
+    assert invert({'Pig': 'pig', 'Sand': 'sand'}) == {'pig': 'Pig', 'sand': 'Sand'}
+
+
 def test_invert_use_multiple() -> None:
     """Tests if multiple entries are inverted correctly."""
     assert invert({'pig': 'oink', 'cow': 'moo', 'cat': 'meow'}) == {'oink': 'pig', 'moo': 'cow', 'meow': 'cat'}
