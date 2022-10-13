@@ -14,6 +14,11 @@ def invert(dictionary: dict[str, str]) -> dict[str, str]:
     return new
 
 
+def main() -> None:
+    """Testing favorite color."""
+    print(favorite_color({"Haley": "Blue", "Sydney": "Green", "Maya": "Pink", "Katie": "Orange"}))
+
+
 def favorite_color(names: dict[str, str]) -> str:
     """Returns the color that appears most frequently."""
     counter: int = 0
@@ -23,7 +28,7 @@ def favorite_color(names: dict[str, str]) -> str:
         i: int = 0
         color = names[key]
         for count in names:
-            if names == color:
+            if names[count] == color:
                 i += 1
             if i > counter:
                 counter = i
@@ -38,5 +43,5 @@ def count(original_list: list[str]) -> dict[str, int]:
         if item in dictionary:
             dictionary[item] += 1
         else:
-            dictionary = 1
+            dictionary[item] = 1
     return dictionary 
