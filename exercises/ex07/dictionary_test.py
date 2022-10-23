@@ -2,7 +2,7 @@
 __author__ = "730311638"
 
 
-from exercises.ex07.dictionary import invert, count, favorite_color
+from exercises.ex07.dictionary import invert, favorite_color, count
 
 
 def test_invert_empty() -> None:
@@ -44,16 +44,16 @@ def test_count_many_again() -> None:
 def test_favorite_color_empty() -> None:
     """Tests favorite color when empty."""
     favorites: dict[str, str] = {}
-    assert favorite_color(favorites) == {}
+    assert favorite_color(favorites) == ""
 
 
 def test_favorite_color_many() -> None:
     """Tests favorite color when many."""
     favorites: dict[str, str] = {"Nickey": "red", "Caroline": "red", "Jordan": "blue"}
-    assert favorite_color(favorites) == {"red"}
+    assert favorite_color(favorites) == "red"
 
 
 def test_favorite_color_again() -> None:
     """Tests favorite color when many again."""
     favorites: dict[str, str] = {"Jo": "red", "Carl": "blue"}
-    assert favorite_color(favorites) == {"red"}
+    assert favorite_color(favorites) == "red"
