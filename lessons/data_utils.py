@@ -17,7 +17,7 @@ def read_csv_rows(filename: str) -> list[dict[str, str]]:
         result.append(row)
 
     # Close the file when we're done, to free its resources.
-    file_handle.close
+    file_handle.close()
 
     return result
 
